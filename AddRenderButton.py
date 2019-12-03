@@ -1,5 +1,5 @@
 bl_info = {
-	"name": "Blender 2.81 RenderButtons",
+	"name": "Blender 2.81 Easy RenderPanel",
 	"author": "Mitsuma",
 	"version": (0, 0, 3),
 	"blender": (2, 81, 0),
