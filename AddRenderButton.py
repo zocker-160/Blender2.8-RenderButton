@@ -24,17 +24,20 @@ class AddRenderPanel(bpy.types.Panel):
 	def draw(self, context):
 		layout = self.layout
 
-		row = layout.row(align=True)
-		row.operator("render.render", text="Render", icon='RENDER_STILL')
-		row.operator("render.render", text="Animation", icon='RENDER_ANIMATION').animation = True
+		row1 = layout.row(align=True)
+		row1.operator("render.render", text="Render", icon='RENDER_STILL')
+		row1.operator("render.render", text="Animation", icon='RENDER_ANIMATION').animation = True
 		
-		split = layout.split()
-
-		split.label(text="Display:")
-		row = split.row(align=True)
-		prefs = context.preferences
-		row.prop(prefs.view, "render_display_type", text="")
-		row.prop(bpy.context.scene.render, "use_lock_interface", icon_only=True)
+		row2 = layout.split()
+		row2.label(text="Tile Order:")  	
+		row2 = row2.row(align=True) 	
+		row2.prop(bpy.context.scene.cycles, "tile_order", text="")
+		
+		row3 = layout.split()
+		row3.label(text="Display:")
+		row3 = row3.row(align=True)
+		row3.prop(context.preferences.view, "render_display_type", text="")
+		row3.prop(bpy.context.scene.render, "use_lock_interface", icon_only=True)
 
 def register():
 	bpy.utils.register_class(AddRenderPanel)
