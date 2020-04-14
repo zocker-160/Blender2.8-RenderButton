@@ -1,6 +1,6 @@
 bl_info = {
-	"name": "Blender 2.81 Easy RenderPanel",
-	"author": "Mitsuma",
+	"name": "Blender 2.8x Simple RenderPanel",
+	"author": "Mitsuma, Zocker_160",
 	"version": (0, 0, 3),
 	"blender": (2, 81, 0),
 	"location": "Render Properties",
